@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Image</title>
+    <style>
+        .image-gallery{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .small-img img{
+            height: 82px;
+            display: block;
+            margin: 5px 0;
+           opacity: .6;
+        }
+        .small-img img:hover{
+            opacity: 1;
+        }
+        .small-img{
+            float: left;
+        }
+        .main-image img{
+            height: 500px;
+        }
+        .main-image{
+            float: right;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-gallery">
+        <div class="small-img">
+            <img src="img/person01.jpg" alt="image" onmouseover="myFuction(this)">
+            <img src="img/person02.jpg" alt="image" onmouseover="myFuction(this)">
+            <img src="img/person03.jpg" alt="image" onmouseover="myFuction(this)">
+            <img src="img/person05.jpg" alt="image" onmouseover="myFuction(this)">
+            <img src="img/person06.jpg" alt="image" onmouseover="myFuction(this)">
+        </div>
+        <div class="main-image">
+            <img id="img-box" src="img/person01.jpg" alt="image">
+        </div>
+    </div>
+    <script>
+        function myFuction (smallImg){
+            var fullImg = document.getElementById('img-box');
+            fullImg.src = smallImg.src;
+        }
+    </script>
+</body>
+</html>
